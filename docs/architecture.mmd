@@ -1,0 +1,8 @@
+flowchart LR
+  Request([Request]) --> Server[Fastify Server]
+  Server --> Agent[Agent Loop]
+  Agent --> Registry[Tool Registry]
+  Registry --> Echo[Echo]
+  Registry --> Calc[Calculator]
+  Registry --> Custom[Custom Tools]
+  Agent --> Response([Response])
