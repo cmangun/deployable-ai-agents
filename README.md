@@ -34,12 +34,12 @@ npm start
 
 ## API Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/health` | GET | Health check |
-| `/tools` | GET | List available tools |
-| `/tool/:name` | POST | Execute a single tool |
-| `/agent/run` | POST | Run agent with a task |
+| Endpoint      | Method | Description           |
+| ------------- | ------ | --------------------- |
+| `/health`     | GET    | Health check          |
+| `/tools`      | GET    | List available tools  |
+| `/tool/:name` | POST   | Execute a single tool |
+| `/agent/run`  | POST   | Run agent with a task |
 
 ## Usage Examples
 
@@ -120,13 +120,13 @@ registry.register(myTool);
 
 Environment variables:
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT` | 3000 | Server port |
-| `NODE_ENV` | development | Environment |
-| `MAX_AGENT_STEPS` | 10 | Max agent loop iterations |
-| `AGENT_TIMEOUT_MS` | 30000 | Agent execution timeout |
-| `LOG_LEVEL` | info | Logging level |
+| Variable           | Default     | Description               |
+| ------------------ | ----------- | ------------------------- |
+| `PORT`             | 3000        | Server port               |
+| `NODE_ENV`         | development | Environment               |
+| `MAX_AGENT_STEPS`  | 10          | Max agent loop iterations |
+| `AGENT_TIMEOUT_MS` | 30000       | Agent execution timeout   |
+| `LOG_LEVEL`        | info        | Logging level             |
 
 ## Next Iterations
 

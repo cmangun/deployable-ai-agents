@@ -34,7 +34,7 @@ export interface AgentConfig {
 
 /**
  * Simple deterministic agent for demonstration.
- * 
+ *
  * In production, this would:
  * - Call an LLM for planning
  * - Use more sophisticated tool selection
@@ -55,7 +55,7 @@ export class Agent {
     // In production, this would use an LLM for planning
 
     const task = request.task.toLowerCase();
-    
+
     // Check if task mentions a known tool
     const tools = this.registry.listTools();
     const mentionedTool = tools.find((t) => task.includes(t.name.toLowerCase()));

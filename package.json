@@ -14,7 +14,13 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "keywords": ["ai", "agents", "llm", "tools", "mcp"],
+  "keywords": [
+    "ai",
+    "agents",
+    "llm",
+    "tools",
+    "mcp"
+  ],
   "author": "Christopher Mangun <cmangun@gmail.com>",
   "license": "MIT",
   "dependencies": {

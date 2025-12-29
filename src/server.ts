@@ -95,7 +95,12 @@ const start = async () => {
   try {
     await app.listen({ port: config.port, host: '0.0.0.0' });
     console.log(`Agent server listening on http://0.0.0.0:${config.port}`);
-    console.log(`Tools available: ${registry.listTools().map((t) => t.name).join(', ')}`);
+    console.log(
+      `Tools available: ${registry
+        .listTools()
+        .map((t) => t.name)
+        .join(', ')}`
+    );
   } catch (err) {
     app.log.error(err);
     process.exit(1);
