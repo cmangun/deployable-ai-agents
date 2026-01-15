@@ -6,7 +6,7 @@
 
 Production-grade agentic AI framework with memory, reasoning, and governance controls. Built for enterprise deployments in regulated environments.
 
-## ⚡ Quick Start (60 seconds)
+## Quick Start (60 seconds)
 
 ```bash
 # Clone and install
@@ -21,7 +21,7 @@ npm test
 npm run build
 ```
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -43,7 +43,7 @@ npm run build
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 🎯 Key Features
+## Key Features
 
 ### Enhanced Agent with Reasoning
 
@@ -176,7 +176,7 @@ const summary = await memory.getSummary('conv_123');
 console.log(`Topics: ${summary?.topics?.join(', ')}`);
 ```
 
-## 📊 Modules
+## Modules
 
 | Module | Description | Key Features |
 |--------|-------------|--------------|
@@ -185,7 +185,7 @@ console.log(`Topics: ${summary?.topics?.join(', ')}`);
 | **Tool Registry** | Tool management | Schema validation, execution tracking, categories |
 | **Memory** | Conversation storage | Search, TTL, export/import, topic extraction |
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -204,7 +204,7 @@ npm test agent.test.ts
 - 40+ registry tests (registration, execution, validation, tracking)
 - 35+ memory tests (entries, search, limits, export/import)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 deployable-ai-agents/
@@ -227,7 +227,7 @@ deployable-ai-agents/
     └── architecture.md      # Architecture documentation
 ```
 
-## 🔒 Enterprise Features
+## Enterprise Features
 
 ### Audit Trail
 
@@ -266,7 +266,7 @@ response.steps.forEach(step => {
 });
 ```
 
-## 🚀 Production Deployment
+## Production Deployment
 
 ### Configuration
 
@@ -292,16 +292,16 @@ if (!response.success) {
 }
 ```
 
-## 📖 Related Repositories
+## Related Repositories
 
 - [enterprise-llm-integration](https://github.com/cmangun/enterprise-llm-integration) - LLM governance library
 - [regulated-data-pipelines](https://github.com/cmangun/regulated-data-pipelines) - HIPAA-compliant ETL
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
-## 👤 Author
+## Author
 
 **Christopher Mangun** - Healthcare AI Consultant  
 - Portfolio: [healthcare-ai-consultant.com](https://healthcare-ai-consultant.com)
