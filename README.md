@@ -6,6 +6,26 @@
 
 Production-grade agentic AI framework with memory, reasoning, and governance controls. Built for enterprise deployments in regulated environments.
 
+## Healthcare & Regulated Environments
+
+This framework was designed for environments where **every AI decision must be auditable, policy-gated, and identity-scoped** — particularly healthcare payer systems operating under HIPAA, SOC 2, and CMS interoperability mandates.
+
+Key design constraints:
+
+- **PHI-aware policy rules** — the policy engine supports data classification tiers (PII, PHI, PCI) with automatic access controls per tool category
+- **Identity-scoped execution** — every agent run is bound to a `userId` and `conversationId`, ensuring member data isolation across sessions
+- **Immutable audit trail** — every tool invocation, policy decision, and reasoning step generates a tamper-evident audit record
+- **Deterministic fallbacks** — when confidence drops below threshold, the agent refuses rather than generates, preventing hallucinated benefit explanations or clinical guidance
+
+## Why This Architecture
+
+| Decision | Rationale |
+|----------|-----------|
+| **Tool-first reasoning** | The agent selects and executes tools rather than generating free-text answers. In healthcare, retrieval correctness matters more than generative fluency. |
+| **Policy enforcement at every decision point** | No tool executes without passing through the policy engine. This prevents data leakage even if the LLM attempts unauthorized actions. |
+| **Memory isolation per member/session** | Conversations are scoped by `conversationId` with TTL-based expiry. No cross-member context leakage. |
+| **Confidence gating** | Low-confidence steps trigger safe refusal rather than speculative output — critical for benefit explanations where inaccuracy has regulatory consequences. |
+
 ## Quick Start (60 seconds)
 
 ```bash
@@ -292,10 +312,38 @@ if (!response.success) {
 }
 ```
 
+## Payer Architecture Alignment
+
+This framework maps directly to the architecture pattern used by major healthcare payers:
+
+```
+Legacy Payer Systems (eligibility, claims, benefits)
+        ↓
+FHIR / Integration Layer (HL7, provider connectivity)
+        ↓
+Data & Analytics Platform (claims + pharmacy + clinical)
+        ↓
+Digital Experience Microservices  ← Tool Registry lives here
+        ↓
+AI Orchestration Layer            ← Agent + Policy Engine lives here
+        ↓
+Member Applications (Web / Mobile / Chat)
+```
+
+In this model:
+- **Tool Registry** exposes payer APIs (benefits lookup, eligibility check, claims status) as validated, schema-enforced tools
+- **Policy Engine** enforces per-member access controls, cost budgets, and PHI handling rules before any tool executes
+- **Agent Reasoning Loop** orchestrates multi-step member interactions (e.g., "Am I covered for this procedure?") by selecting and sequencing the right tools
+- **Memory System** maintains conversation continuity within identity-scoped sessions
+- **Audit Logger** produces the compliance trail required for CMS and HIPAA audit readiness
+
 ## Related Repositories
 
 - [enterprise-llm-integration](https://github.com/cmangun/enterprise-llm-integration) - LLM governance library
 - [regulated-data-pipelines](https://github.com/cmangun/regulated-data-pipelines) - HIPAA-compliant ETL
+- [healthcare-rag-platform](https://github.com/cmangun/healthcare-rag-platform) - HIPAA-compliant RAG with PHI detection
+- [agentic-member-assistant](https://github.com/cmangun/agentic-member-assistant) - Virtual health assistant with identity-scoped retrieval
+- [fhir-integration-service](https://github.com/cmangun/fhir-integration-service) - FHIR R4 interoperability service
 
 ## License
 
