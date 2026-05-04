@@ -1,3 +1,14 @@
+> ## ⚠️ Archived — superseded by the Agentic Evidence Suite
+>
+> This repo holds early scaffolds for tool-calling agents with policy
+> controls and observability. The work has been refactored into six
+> interoperating components: https://github.com/cmangun/agentic-evidence
+>
+> See the suite for current receipts, policy, evaluation, artifacts,
+> trace CLI, and review viewer implementations.
+
+---
+
 # Deployable AI Agents
 
 [![CI](https://github.com/cmangun/deployable-ai-agents/actions/workflows/ci.yml/badge.svg)](https://github.com/cmangun/deployable-ai-agents/actions)
